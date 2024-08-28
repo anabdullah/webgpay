@@ -1,5 +1,6 @@
 import React from 'react';
 import People from './People/People';
+import QR from '../public/qr_code.png'
 
 const people = [
     { name: 'yoshi', age: 30 },
@@ -20,12 +21,16 @@ const App = () => {
             <div className="w-screen h-[55vh] bg-blue-600 relative">
 
                 <div className='w-[50%] p-2 absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2 justify-between items-center'>
-{                    people.map((person) => (
+                    {people.map((person) => (
                         <People name={person.name} age={person.age} />
                     ))}
                 </div>
             </div>
-            <div className="w-screen h-[45vh] bg-blue-50"></div>
+            <div className="w-screen h-[45vh] flex justify-center items-center">
+                <div className='w-[50%] h-full p-3 flex justify-center items-center'>
+                    <img src={QR} alt="qr_code" className='w-[20%] bg-white rounded-2xl' />
+                </div>
+            </div>
         </>
     );
 };
